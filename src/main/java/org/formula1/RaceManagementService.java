@@ -14,9 +14,9 @@ public class RaceManagementService {
         return raceManagement.getCarPartsPricePerRacePerCar() * raceManagement.getNumberOfRacesInAYear() * raceManagement.getTeam().getCarList().size();
     }
 
-    public int calculateTotalCostForAllPitCrewMembers(RaceManagement raceManagement) {
-        List<Employee> pitCrewMembers = raceManagement.getTeam().getEmployeeList().stream().filter(employee -> employee instanceof CrewMember).toList();
-        return pitCrewMembers.size() * raceManagement.getDailyPayment() * 365; // number of exact working days not provided, calculation made for full year.
+    public int calculateTotalCostForAllCrewMembers(RaceManagement raceManagement) {
+        List<Employee> CrewMembers = raceManagement.getTeam().getEmployeeList().stream().filter(employee -> employee instanceof CrewMember).toList();
+        return CrewMembers.size() * raceManagement.getDailyPayment() * 365;
     }
 
     public int calculateTotalCostForAllDrivers(RaceManagement raceManagement) {
@@ -25,9 +25,9 @@ public class RaceManagementService {
         int totalCost = 0;
 
         for (int i = 0; i < raceManagement.getNumberOfRacesInAYear(); i++) {
-
             Driver racingDriver1 = (Driver) drivers.get(random.nextInt(drivers.size()));
             Driver racingDriver2 = (Driver) drivers.get(random.nextInt(drivers.size()));
+
             totalCost += racingDriver1.getDriverExperienceLevel().getPayPerRace() + racingDriver2.getDriverExperienceLevel().getPayPerRace();
         }
         return totalCost;
@@ -40,7 +40,7 @@ public class RaceManagementService {
 
     public int calculateTotalNetProfitOfTheYear(RaceManagement raceManagement) {
         return calculateTotalWinningsOfTheYear(raceManagement) - (calculateTotalYearlyCostForCarParts(raceManagement) +
-                calculateTotalCostForAllPitCrewMembers(raceManagement) + calculateTotalCostForAllDrivers(raceManagement));
+                calculateTotalCostForAllCrewMembers(raceManagement) + calculateTotalCostForAllDrivers(raceManagement));
     }
 
 }

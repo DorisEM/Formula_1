@@ -33,7 +33,12 @@ public class Main {
 
         RaceManagement raceManagement = new RaceManagement(team, 22, 2, 5);
         RaceManagementService raceManagementService = new RaceManagementService();
-        System.out.println(raceManagementService.calculateTotalNetProfitOfTheYear(raceManagement));
+
+        System.out.println("Costs for all drivers: " + raceManagementService.calculateTotalCostForAllDrivers(raceManagement));
+        System.out.println("Costs for all other crew members: " + raceManagementService.calculateTotalCostForAllCrewMembers(raceManagement));
+        System.out.println("Costs for all car parts: " + raceManagementService.calculateTotalYearlyCostForCarParts(raceManagement));
+        System.out.println("Total winnings: " + raceManagementService.calculateTotalWinningsOfTheYear(raceManagement));
+        System.out.println("Total net profit for the year: " + raceManagementService.calculateTotalNetProfitOfTheYear(raceManagement));
 
     }
 }
