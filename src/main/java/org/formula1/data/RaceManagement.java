@@ -55,9 +55,7 @@ public class RaceManagement {
         return dailyPayment;
     }
 
-    public int getTotalYearlyProfit() {
-        return totalYearlyProfit;
-    }
+    public int getTotalYearlyProfit() {return totalYearlyProfit;}
 
     public void setTotalYearlyProfit(int totalYearlyProfit) {
         this.totalYearlyProfit = totalYearlyProfit;

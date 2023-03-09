@@ -1,0 +1,16 @@
+Formula 1 team manager, by Taki. Revised by Kornél.
+
+You are the new Manager of the CodeCool F1 team and tasked with modeling and implementing a system that calculates the total profit of it.
+
+The team has cars, car parts, and employees. Cars are made out of car parts.
+
+The employees are drivers, pit crew members, and engineers. Cars have a driver, but the driver can change between races.
+
+The employees have a name, and an age. The Drivers have an experience (Beginner, Medium, and Expert), all drivers get their payments based on their experience:
+Beginners get 20.000 EUR, Medium drivers 40.000 EUR, Expert drivers 100.000 EUR for each race they participate in. The other employees have a daily payment of 1.000 EUR
+
+Every race, 2 car parts get used up per car, so you need to buy new ones. Each part costs 10.000 EUR
+
+In a year, there are 22 races. On average, your team seems to win 2 races each year and come second in 5. Wins are worth 10.000.000 EUR, while coming second are worth 1.000.000 EUR.
+
+Given an F1 team with 2 cars, 3 drivers (one for each experience level), 4 pit crew members, and 2 engineers, how much profit is your team gonna make in an average year?
